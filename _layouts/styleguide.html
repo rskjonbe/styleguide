@@ -8,8 +8,9 @@
 	Styleguide page
 
     {% include header.html %}
+
 	<nav class="page-index">
-		<ul id="chapterNav"></ul>
+		<ul id="chapterNav" class="chapter-nav"></ul>
 	</nav>
 
 	<article class="page-container">
@@ -24,19 +25,24 @@
             $(".guide-chapter").each(function(){
                 var nav = $("#chapterNav");
                 var chapter = $(this);
-                var element = $('<li><a href="#' + chapter.attr("id") + '">' + chapter.attr("data-chapter-name") + '</a></li>');
-                nav.append(element);
                 var subChapters = chapter.find(".guide-subchapter");
+                var element = $('<li class="chapter-nav__list-item"><a class="chapter-nav__link chapter-nav__link--chapter" href="#' + chapter.attr("id") + '">' + chapter.attr("data-chapter-name") + '</a></li>');
+                nav.append(element);
                 if(subChapters.length > 0) {
-                    var subnav = $('<ul class="subnav"></ul>');
+                    var subnav = $('<ul class="chapter-nav chapter-nav--sub-nav"></ul>');
                     element.append(subnav);
                     subChapters.each(function(){
                         var subchapter = $(this);
-                        var subelement = $('<li><a href="#' + subchapter.attr("id") +'">' + subchapter.attr("data-subchapter-name") + '</a></li>');
+                        var subelement = $('<li class="chapter-nav__list-item"><a class="chapter-nav__link" href="#' + subchapter.attr("id") +'">' + subchapter.attr("data-subchapter-name") + '</a></li>');
                         subnav.append(subelement);
                     });
                 }
-            })
+            });
+
+            $(".chapter-nav__link").on("click", function(){
+                $(this).toggleClass("chapter-nav__link--active-chapter");
+                return false;
+            });
         })
     </script>
 

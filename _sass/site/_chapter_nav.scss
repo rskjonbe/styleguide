@@ -1,3 +1,41 @@
 .page-index {
 	background: lightgray;
 }
+.index-chapter {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.index-chapter__link {
+
+}
+
+.index-subchapter {
+  margin: 0 0 0 1rem;
+  display: none;
+}
+
+.index-subchapter__link {
+
+}
+
+
+.chapter-nav__list-item {
+  margin: 0;
+  padding: 0;
+}
+.chapter-nav__link {
+  text-decoration: none;
+  display: block;
+  padding: .5rem 1rem;
+}
+.chapter-nav__link--chapter {
+
+}
+.chapter-nav__link--active-chapter {
+  background: #fff;
+
+  & + .chapter-nav--sub-nav {
+    display: block;
+  }
+}
