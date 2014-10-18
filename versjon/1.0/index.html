@@ -1,28 +1,27 @@
 ---
-layout: default
+layout: styleguide
 ---
 
-<div class="home">
+<div>
 
     <h1 class="page-heading">Versjon 1.0</h1>
     <p>Velkommen til versjon 1.0 av styleguiden til Trondheim kommune</p>
-<p>Denne endringen kan ha blitt gjort av Pål</p>
-    <ul id="chapterNav"></ul>
+    <p>Denne endringen kan ha blitt gjort av Pål</p>
 
-    {% include_relative skjema.html %}
-    {% include_relative buttons.html %}
+    <section class="guide-chapter" data-chapter-name="Intro">
+        {% include_relative intro.html %}
+    </section>
+
+    <section class="guide-chapter" data-chapter-name="Fargepalett">
+        {% include_relative farger.html %}
+    </section>
+
+    <section class="guide-chapter" data-chapter-name="Komponenter">
+        {% include_relative skjema.html %}
+        {% include_relative buttons.html %}
+    </section>
+
 
 </div>
-<script>
-    // Bygger opp menyen
-    $(document).ready(function(){
-        var $chapterNav = $("#chapterNav");
-        var chapterNavHtml = "";
-        $(".chapter").each(function(){
-            chapterNavHtml += '<li><a href="#' + $(this).attr("id") + '">' + $(this).attr("id") + '</li>'
-        });
-        $chapterNav.html(chapterNavHtml);
-    });
-</script>
 
 
