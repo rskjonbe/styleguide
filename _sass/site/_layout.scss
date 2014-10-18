@@ -1,10 +1,46 @@
+.site-head {
+  background: $theme-color;
+  color: white;
+  padding: 0.2em 1em;
+}
+
+.site-head__logo {
+  position: relative;
+  display: inline-block;
+  height: 2em;
+  top: .4em;
+  width: auto;
+  margin-right: 2em;
+  vertical-align: center;
+}
+
+.site-head__title {
+  font-size: 1.2em;
+  font-weight: 200;
+
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
 .page-container {
   width: 100%;
   padding-left: 240px;
+  box-sizing: border-box
 }
 
 .page-index {
   width: 240px;
   position: fixed;
   left: 0;
+}
+
+.page {
+  padding: 0 3em;
+}
+
+.guide-chapter {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 2em;
+  margin-bottom: 2em;
 }
