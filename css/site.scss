@@ -6,7 +6,7 @@
 
 
 // Our variables
-$theme-color: #0074c2;
+$theme-color: #005594;
 
 
 // Using media queries with like this:
@@ -23,13 +23,9 @@ $theme-color: #0074c2;
 }
 
 
-body {
-  font-family: "PT Sans"
-}
-
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
+  "site/base.scss",
   "site/layout.scss",
   "site/chapter_nav.scss"
 ;
