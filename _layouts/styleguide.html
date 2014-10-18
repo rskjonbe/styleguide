@@ -19,21 +19,26 @@
 
     {% include footer.html %}
 
-	<script>
-	    // Bygger opp menyen
-	    $(document).ready(function(){
-	    	var $chapterNav = $("#chapterNav");
-	    	$(".guide-chapter").each(function(){
-
-	    	});
-
-	        var chapterNavHtml = "";
-	        $(".chapter").each(function(){
-	            chapterNavHtml += '<li><a href="#' + $(this).attr("id") + '">' + $(this).attr("id") + '</li>'
-	        });
-	        $chapterNav.html(chapterNavHtml);
-	    });
-	</script>
+    <script>
+        $(document).ready(function(){
+            $(".guide-chapter").each(function(){
+                var nav = $("#chapterNav");
+                var chapter = $(this);
+                var element = $('<li><a href="#' + chapter.attr("id") + '">' + chapter.attr("data-chapter-name") + '</a></li>');
+                nav.append(element);
+                var subChapters = chapter.find(".guide-subchapter");
+                if(subChapters.length > 0) {
+                    var subnav = $('<ul class="subnav"></ul>');
+                    element.append(subnav);
+                    subChapters.each(function(){
+                        var subchapter = $(this);
+                        var subelement = $('<li><a href="#' + subchapter.attr("id") +'">' + subchapter.attr("data-subchapter-name") + '</a></li>');
+                        subnav.append(subelement);
+                    });
+                }
+            })
+        })
+    </script>
 
   </body>
 </html>
