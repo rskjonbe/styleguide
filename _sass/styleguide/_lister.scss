@@ -1,0 +1,254 @@
+/*
+ Ulike varianter av lister
+ */
+/* tk-list-1 - a list of titles + datestamps, commonly used to show publications in a chronological order */
+.tk-list-1 {
+  overflow: visible;
+  margin: 10px 0 10px 0;
+  padding: 0;
+
+  .list-item {
+    list-style: none;
+    margin: 0;
+    position: relative;
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px dashed #ddd;
+    overflow: hidden;
+
+    &.last-item {
+      border-bottom: none;
+    }
+
+    &:hover, &:active {
+      background: none;
+    }
+
+    h3 {
+      margin: 0 0;
+      font-size: 1em;
+      font-weight: normal;
+    }
+
+    time, p, .date {
+      color: #555;
+      font-weight: normal;
+    }
+
+    time {
+      font-size: 0.7em;
+      float: right;
+    }
+
+    .date {
+      font-size: 0.7em;
+      float: right;
+    }
+
+    p {
+      margin: 5px 0 0 0;
+    }
+  }
+}
+
+.tk-list-1-title {
+  margin-top: 0.2em;
+  margin-bottom: 0.5em;
+  border-bottom: 2px solid #ddd;
+  font-size: 1.5em;
+}
+/* end tk-list-1 */
+
+.tk-alphabetic-list__index {
+    margin-left: 0;
+    list-style: none;
+    padding: 0;
+
+    .letter {
+        border-radius: 3px;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        width: 1.4em;
+        text-align: center;
+        box-shadow: 0 1px 0px rgba(0,0,0,.05);
+    }
+}
+.tk-alphabetic-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .letter-header{
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    ul,ol {
+        list-style: none;
+        margin: 0 0 20px 0;
+        padding: 5px 0 0 0;
+        border-top: 1px solid #ececec;
+
+        li {
+            line-height: 1.1;
+            margin-bottom: .8em;
+        }
+    }
+}
+/* tk-list-block - a vertical list where the li elements are separated by thin lines and appropriate padding */
+.tk-list-block {
+    margin: 10px 0 10px;
+    padding: 0;
+    line-height: 1.2;
+    list-style: none;
+
+    .list-item {
+        border-bottom: 1px solid #dadada;
+        padding: 10px 2px;
+
+        &:first-child{
+            border-top: none;
+        }
+
+        &:hover, &:active, &.active {
+            background-color: rgba(0,0,0,.1);
+        }
+
+    }
+
+    .list-item a {
+        margin: -10px -2px;
+        padding: 10px 2px;
+        display: block;
+        color: inherit;
+    }
+
+    a,
+    a:hover,
+    a:active {
+        color: #000;
+        text-decoration: none;
+    }
+
+    &.collapsed{
+        display: none;
+    }
+}
+
+.tk-list-block-title {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom: 2px solid #dadada;
+}
+
+@media (max-width: 767px) {
+    .tk-list-block-title {
+        margin: 0;
+        padding: 0;
+        font-size: 1.2em;
+        font-weight: bold;
+        border-bottom: 2px solid #dadada;
+        margin-bottom: 20px;
+
+        & + ul {
+            margin-top: -20px;
+            margin-bottom: 20px;
+        }
+
+        &.collapsed {
+            cursor: pointer;
+
+            &:after {
+                color: #333;
+                content: "\25C0";
+                float: right;
+                font-size: 12px;
+            }
+        }
+
+        &.expanded {
+            cursor: pointer;
+
+            &:after {
+                color: #333;
+                content: "\25BC";
+                float: right;
+                font-size: 12px;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+.tk-list-block.light {
+    li {
+        border-bottom-color: rgba(255,255,255,.2);
+
+        &:hover{
+            background: rgba(0,0,0,.1);
+        }
+    }
+
+    a,
+    a:visited,
+    a:hover,
+    a:active{
+        color: #fff;
+    }
+}
+
+.tk-list-block-title.light {
+    border-bottom-color: rgba(255,255,255,.2)
+}
+/* end tk-list-block */
+
+/* DEFINITIONLIST */
+[class*="tk-definitionlist"] {
+  margin: 10px 0 10px 0;
+}
+.tk-definitionlist-style1 {
+  dt {
+    display: block;
+    font-weight: bold;
+    float: left;
+    clear: both;
+
+    &:after {
+      content: ": ";
+      padding-right: 5px;
+    }
+  }
+  dd {
+    display: block;
+    margin: 0;
+  }
+}
+
+.tk-definitionlist-style2 {
+  dt {
+    font-weight: bold;
+  }
+}
+
+.article-aside-list {
+    list-style: none;
+    margin: 10px 0 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0;
+}
+
+.article-aside-list .list-item {
+    border-bottom: 1px solid #eee;
+    display: block;
+    padding: 15px;
+}
+
+.article-aside-title {
+margin: 0;
+font-weight: bold;
+}

@@ -12,10 +12,20 @@
 }
 
 .page-index__to-top {
-  width: 100%;
   position: absolute;
   top: 1em;
   color: #aaa;
+}
+
+.chapter-nav {
+  padding: 0;
+  margin: 0;
+}
+
+.chapter-nav__list-item {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .index-chapter {
@@ -23,36 +33,36 @@
   margin: 0;
   padding: 0;
 }
-.index-chapter__link {
 
-}
+.index-chapter__link {}
 
 .index-subchapter {
   margin: 0 0 0 1rem;
   display: none;
 }
 
-.index-subchapter__link {
+.index-subchapter__link {}
 
-}
-
-
-.chapter-nav__list-item {
-  margin: 0;
-  padding: 0;
-}
 .chapter-nav__link {
   text-decoration: none;
   display: block;
-  padding: .5rem 1rem;
+  padding: .5rem 0;
 }
-.chapter-nav__link--chapter {
 
-}
+.chapter-nav__link--chapter {}
+
 .chapter-nav__link--active-chapter {
-  background: #fff;
+  font-weight: bold;
+  position: relative;
 
-  & + .chapter-nav--sub-nav {
+  &:after {
+    content: " ";
     display: block;
+    height: 100%;
+    width: 4px;
+    background: $theme-color;
+    position: absolute;
+    left: -1em;
+    top: 0;
   }
 }

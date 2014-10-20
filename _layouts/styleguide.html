@@ -1,49 +1,44 @@
 <!DOCTYPE html>
 <html>
 
-  {% include head.html %}
+{% include head.html %}
 
-  <body>
+<body>
     {% include header.html %}
 
-	<nav class="page-index">
+    <nav class="page-index">
         <a href="#" class="page-index__to-top">Gå til toppen</a>
         <h2>Versjon 1.0</h2>
-		<ul id="chapterNav" class="chapter-nav"></ul>
-	</nav>
+        <ul id="chapterNav" class="chapter-nav"></ul>
+    </nav>
 
-	<article class="page-container--styleguide">
-		{{ content }}
-	</article>
+    <article class="page-container--styleguide">
+      {{ content }}
+  </article>
 
 
-    {% include footer.html %}
+  {% include footer.html %}
 
-    <script>
-        $(document).ready(function(){
-            $(".guide-chapter").each(function(){
-                var nav = $("#chapterNav");
-                var chapter = $(this);
-                var subChapters = chapter.find(".guide-subchapter");
-                var element = $('<li class="chapter-nav__list-item"><a class="chapter-nav__link chapter-nav__link--chapter" href="#' + chapter.attr("id") + '">' + chapter.attr("data-chapter-name") + '</a></li>');
-                nav.append(element);
-                if(subChapters.length > 0) {
-                    var subnav = $('<ul class="chapter-nav chapter-nav--sub-nav"></ul>');
-                    element.append(subnav);
-                    subChapters.each(function(){
-                        var subchapter = $(this);
-                        var subelement = $('<li class="chapter-nav__list-item"><a class="chapter-nav__link" href="#' + subchapter.attr("id") +'">' + subchapter.attr("data-subchapter-name") + '</a></li>');
-                        subnav.append(subelement);
-                    });
-                }
-            });
+  <script>
+    $(document).ready(function(){
 
-            $(".chapter-nav__link").on("click", function(){
-                $(this).toggleClass("chapter-nav__link--active-chapter");
-                return false;
-            });
-        })
-    </script>
+        var nav = $('#chapterNav');
 
-  </body>
+        $('.guide-chapter').each(function(){
+            var chapter = $(this),
+                elements = chapter.find('.guide-element'),
+                chapterListItem = $('<li class="chapter-nav__list-item"><a class="chapter-nav__link" href="#' + chapter.attr("id") + '">' + chapter.attr("data-chapter-name") + '</a></li>');
+
+            nav.append(chapterListItem);
+        });
+
+        $(".chapter-nav__link").on("click", function(){
+            $(".chapter-nav__link").removeClass("chapter-nav__link--active-chapter");
+            $(this).addClass("chapter-nav__link--active-chapter");
+            // return false;
+        });
+    })
+</script>
+
+</body>
 </html>

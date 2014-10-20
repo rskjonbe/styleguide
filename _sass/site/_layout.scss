@@ -9,7 +9,6 @@
   box-sizing: border-box;
   width: 100%;
   padding-left: 240px;
-  padding-right: 1em;
 }
 
 .site-head {
@@ -69,7 +68,21 @@
 }
 
 .guide-chapter {
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 2em;
-  margin-bottom: 2em;
+  border-bottom: 8px solid #eee;
+  padding-bottom: 4em;
+  margin-bottom: 4em;
+}
+
+.guide-element {
+  position: relative;
+  border: 2px dashed #ddd;
+  border-radius: 10px;
+  background: #fafafa;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.element-heading {
+  margin-top: 2em;
+  margin-bottom: .5em;
 }
