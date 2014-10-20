@@ -2,25 +2,46 @@
   background: $theme-color;
   color: white;
   padding: 0.2em 1em;
+
+  a {
+    color: white;
+  }
 }
 
 .site-head__logo {
-  position: relative;
   display: inline-block;
   height: 2em;
-  top: .4em;
   width: auto;
-  margin-right: 2em;
-  vertical-align: center;
+  margin: .5em 0;
+  margin-right: .7em;
+  vertical-align: middle;
 }
 
 .site-head__title {
   font-size: 1.2em;
-  font-weight: 200;
+  font-weight: 100;
 
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 .7em;
   display: inline-block;
+  border-left: 2px solid rgba(255,255,255,.2);
+}
+
+.site-head__nav {
+  float: right;
+  margin-top: 1em;
+  font-size: .9em;
+}
+
+.site-head__nav__links {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+    display: inline-block;
+    padding-left: 1em;
+  }
 }
 
 .page-container {
