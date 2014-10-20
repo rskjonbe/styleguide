@@ -1,3 +1,17 @@
+.page-container {
+  max-width: 44em;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 2em 1em 0;
+}
+
+.page-container--styleguide {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 240px;
+  padding-right: 1em;
+}
+
 .site-head {
   background: $theme-color;
   color: white;
@@ -6,6 +20,10 @@
   a {
     color: white;
   }
+}
+
+.site-head__home-link {
+  text-decoration: none;
 }
 
 .site-head__logo {
@@ -42,12 +60,6 @@
     display: inline-block;
     padding-left: 1em;
   }
-}
-
-.page-container {
-  width: 100%;
-  padding-left: 240px;
-  box-sizing: border-box
 }
 
 .page-index {
