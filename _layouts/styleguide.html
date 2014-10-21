@@ -4,20 +4,20 @@
 {% include head.html %}
 
 <body>
-    {% include header.html %}
+{% include header.html %}
 
-    <nav class="page-index">
-        <a href="#" class="page-index__to-top">Gå til toppen</a>
-        <h2>Versjon 1.0</h2>
-        <ul id="chapterNav" class="chapter-nav"></ul>
-    </nav>
+<nav class="page-index">
+    <a href="#" class="page-index__to-top">Gå til toppen</a>
+    <h2>Versjon 1.0</h2>
+    <ul id="chapterNav" class="chapter-nav"></ul>
+</nav>
 
-    <article class="page-container--styleguide">
-      {{ content }}
-  </article>
+<article class="page-container--styleguide">
+    {{ content }}
+</article>
 
 
-  {% include footer.html %}
+{% include footer.html %}
 
   <script>
     $(document).ready(function(){

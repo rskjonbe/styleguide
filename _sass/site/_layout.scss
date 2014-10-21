@@ -75,14 +75,36 @@
 
 .guide-element {
   position: relative;
+  box-sizing: border-box;
+  margin: 2rem 0;
+}
+.guide-element__meta {
+  float: left;
+  width: 30%;
+  margin-right: 2rem;
+}
+.guide-element__rendered {
+  overflow: hidden;
   border: 2px dashed #ddd;
   border-radius: 10px;
-  background: #fafafa;
   padding: 1em;
-  box-sizing: border-box;
 }
 
-.element-heading {
-  margin-top: 2em;
+.guide-element__heading {
+  margin-top: 0;
   margin-bottom: .5em;
+}
+
+.cf:before,
+.cf:after,
+.guide-element:before,
+.guide-element:after
+{
+  content: " ";
+  display: table;
+}
+.cf:after,
+.guide-element:after
+{
+  clear: both;
 }
