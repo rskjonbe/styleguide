@@ -71,6 +71,14 @@
   border-bottom: 8px solid #eee;
   padding-bottom: 4em;
   margin-bottom: 4em;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.chapter-lead {
+  max-width: 50em;
 }
 
 .guide-element {
