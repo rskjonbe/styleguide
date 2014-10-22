@@ -16,11 +16,16 @@
     }
 }
 
-
+* {
+  box-sizing: border-box;
+}
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
+    "styleguide/font",
     "styleguide/buttons",
     "styleguide/lister",
-    "styleguide/skjema"
+    "styleguide/skjema",
+    "styleguide/tabeller",
+    "styleguide/kalender"
 ;

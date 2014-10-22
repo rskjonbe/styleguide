@@ -210,25 +210,8 @@
 [class*="tk-definitionlist"] {
   margin: 10px 0 10px 0;
 }
-.tk-definitionlist-style1 {
-  dt {
-    display: block;
-    font-weight: bold;
-    float: left;
-    clear: both;
 
-    &:after {
-      content: ": ";
-      padding-right: 5px;
-    }
-  }
-  dd {
-    display: block;
-    margin: 0;
-  }
-}
-
-.tk-definitionlist-style2 {
+.tk-definition-list {
   dt {
     font-weight: bold;
   }

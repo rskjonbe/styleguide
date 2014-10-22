@@ -1,0 +1,111 @@
+$secColor: #d6dee0;
+
+/* Basic table style with Trondheim Kommune theme */
+.tkc-table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+
+  thead {
+    font-weight: bold;
+    font-size: 1.1em;
+
+    tr {
+      border: none;
+    }
+  }
+
+  th {
+    text-align: left;
+    font-weight: bold;
+    padding: 10px 15px;
+  }
+
+  td {
+    padding: 10px 15px;
+
+  }
+
+  tr {
+    border: 2px solid #d6dee0;
+
+    &:nth-child(2n) {
+      background: #f5f5f5;
+    }
+  }
+
+  tbody tr:hover {
+    background: #fdfae2;
+  }
+
+  tr:nth-of-type(2n) {
+    background: #f1f4f5;
+  }
+
+  .cell-title {
+    //Denne vises kun på mobil, og tar over for thead
+    display: none;
+  }
+
+  .tkc-table-group-header {
+    background: $secColor !important;
+    color: #fff;
+  }
+}
+
+th.tablesorter-header {
+  cursor: pointer;
+}
+
+th.tablesorter-headerAsc .sort-indicator {
+  position: relative;
+  top: 12px;
+  left: 5px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+
+  border-top: 5px solid #000;
+}
+
+th.tablesorter-headerDesc .sort-indicator {
+  position: relative;
+  bottom: 12px;
+  left: 5px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+
+  border-bottom: 5px solid #000;
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+  .tkc-table {
+    max-width: 100%;
+
+    td {
+      display: block;
+      padding: 0.1em 0.8em;
+
+      &:first-of-type {
+        padding-top: 0.8em;
+      }
+
+      &:last-of-type {
+        padding-bottom: 0.8em;
+      }
+    }
+
+    thead {
+      display: none;
+    }
+
+    .cell-title {
+      font-weight: bold;
+      display: inline;
+    }
+  }
+}
