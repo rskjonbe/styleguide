@@ -19,24 +19,64 @@
 
 {% include footer.html %}
 
-  <script>
+<script>
     $(document).ready(function(){
 
-        var nav = $('#chapterNav');
+        var chapterNavigator = function(chapterNav){
+            var $nav = $(chapterNav);
+            var $chapters = $('.guide-chapter');
 
-        $('.guide-chapter').each(function(){
-            var chapter = $(this),
-                elements = chapter.find('.guide-element'),
-                chapterListItem = $('<li class="chapter-nav__list-item"><a class="chapter-nav__link" href="#' + chapter.attr("id") + '">' + chapter.attr("data-chapter-name") + '</a></li>');
+            // Loop over chapters in document and generate list items in index
+            $chapters.each(function(){
+                var chapter = $(this),
+                    elements = chapter.find('.guide-element'),
+                    chapterListItem = $('<li class="chapter-nav__list-item"><a class="chapter-nav__link" href="#' + chapter.attr("id") + '">' + chapter.attr("data-chapter-name") + '</a></li>');
 
-            nav.append(chapterListItem);
-        });
+                $nav.append(chapterListItem);
+            });
 
-        $(".chapter-nav__link").on("click", function(){
-            $(".chapter-nav__link").removeClass("chapter-nav__link--active-chapter");
-            $(this).addClass("chapter-nav__link--active-chapter");
-            // return false;
-        });
+            // Remove active class from all list elements and assign to proper element
+            var setActiveChapter = function($ch){
+                $(".chapter-nav__link").removeClass("chapter-nav__link--active-chapter");
+                $ch.addClass("chapter-nav__link--active-chapter");
+            }
+
+
+            // When user clicks link in index, set as active
+            $(".chapter-nav__link").on("click", function(){
+                setActiveChapter($(this));
+            });
+
+
+            // Listen for scroll and update index accordingly
+            var updateIndex = function(){
+                var pos = window.scrollY;
+                var currentChapter;
+                var $correspondingLink;
+
+                $chapters.each(function(){
+                    if (pos >= this.offsetTop){
+                        currentChapter = this;
+                    }
+                });
+
+                $correspondingLink = $("a.chapter-nav__link[href=#" + currentChapter.id + "]");
+                setActiveChapter($correspondingLink);
+
+            }
+
+
+            // Listen for
+            document.addEventListener('scroll', function(){
+                updateIndex();
+            });
+        }
+
+
+        // Initialize chapter generation on element
+        chapterNavigator("#chapterNav");
+
+
     })
 </script>
 

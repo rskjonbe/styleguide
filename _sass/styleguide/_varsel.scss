@@ -1,0 +1,29 @@
+/* Message component */
+[class*="tk-message--"] {
+  padding: 10px;
+  margin: 1em 0;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #ccc;
+  text-align: center;
+  color: #4c4a33;
+  border-radius: 3px;
+}
+.tk-message--info {
+  background-color: #F5F3E7;
+  border-color: #EBE8DD;
+}
+.tk-message--important {
+  padding: 10px;
+  background-color: #FFFCAB;
+  border-color: #FCD641;
+  color: #4c4a33;
+}
+.tk-message--alert {
+  background: #FFD2D2;
+  color: #B50000;
+  border-color: #F78E8E;
+}
+.tk-message--warning {
+  background: orange;
+}
