@@ -1,9 +1,4 @@
-<h2 class="chapter-heading">Font, titler og tekst</h2>
-
-<p class="chapter-lead">
-  Font i logo skal være Dax. Dette er et absolutt krav. Font i titler og tekst for web reguleres av gjeldende praksis på Trondheim kommunes hjemmeside. P.t. benyttes Google webfont PT Sans (Font family: PT Sans, helvetica, sans-serif;). Alternativt, kan man benytte Verdana eller Arial. </p>
-<p><a href="http://trondheimkommune.github.io/styleguide/about.html">Kontakt oss for å få tilsendt logofonten Dax.</a></p>
-
+<h2 class="chapter-heading">Titler og tekst</h2>
 
 <!-- Headinger -->
 <section class="guide-element">
