@@ -14,7 +14,7 @@
 .site-head {
   background: $theme-color;
   color: white;
-
+  padding: 1px 1px;
   position: relative;
   z-index: 1;
 
@@ -49,6 +49,7 @@
 .site-head__nav {
   float: right;
   margin-top: 1em;
+  padding-right: 20px;
   font-size: .9em;
 }
 
