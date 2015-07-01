@@ -4,11 +4,11 @@
 <section class="guide-element">
     <div class="guide-element__meta">
     <h3 class="guide-element__heading">Skalerbarhet</h3>
-        <p class="guide-element__description">Ved nyutvikling og oppgradering av CSS anbefaler vi følgende <a href="http://typecast.com/images/uploads/modernscale.css">veiledende standard for mediaskalerbare titler og tekst fra Typecast.com</a>.
+        <p class="guide-element__description">Fontstørrelse skal angis i em/rem (relativ enhet). Ved nyutvikling og oppgradering av CSS anbefaler vi følgende <a href="http://typecast.com/images/uploads/modernscale.css">veiledende standard for mediaskalerbare titler og tekst fra Typecast.com</a>. CSS-koden er gjengitt i avsnittene under.
     </div>
 
     <div class="guide-element__rendered">
-       <p font-size="3em">Heading 1</p>
+       <p font-size="48px">Heading 1</p>
        <h2>Heading 2</h2>
        <h3>Heading 3</h3>
        <h4>Heading 4</h4>
@@ -18,9 +18,8 @@
 <!-- Rik tekst -->
 <section class="guide-element">
     <div class="guide-element__meta">
-      <h3 class="guide-element__heading">Body</h3>
-      <p class="guide-element__description">
-body {
+      <h3>Body</h3>
+<p class="chapter-lead">body {
   font-size: 100%;
 }
 
@@ -45,6 +44,32 @@ body, h1, h2, h3, h4, h5, h6 {
     /* equivalent to 22px */
   }
 }</p>
+<h3>Heading 1</h3>
+<p class="chapter-lead">h1 {
+  font-size: 2em;
+  /* 2x body copy size = 32px */
+  line-height: 1.25;
+  /* 45px / 36px */
+}
+
+@media (min-width: 43.75em) {
+  h1 {
+    font-size: 2.5em;
+    /* 2.5x body copy size = 40px */
+    line-height: 1.125;
+  }
+}
+
+@media (min-width: 56.25em) {
+  h1 {
+    font-size: 3em;
+    /* 3x body copy size = 48px */
+    line-height: 1.05;
+    /* keep to a multiple of the 20px line height 
+    and something more appropriate for display headings */
+  }
+}</p>
+
     </div>
 
     <div class="guide-element__rendered">
